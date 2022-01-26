@@ -2,14 +2,14 @@
 # VOC-DEFAULT-YEALINK-COMMON-TEMPLATE
 
 ## Grab The Common Files
-common_file_config_path = 'C:\\Users\\jeffrey\\Documents\\YEALINK_UPDATED_TEMPS-2021\\YEALINK_CONFIG_UPDATER\\VOC-DEFAULT-YEALINK-COMMON-TEMPLATE\\'
+common_file_config_path = '<COMMON-FILE-DIRECTORY>'
 
 with open(f'{common_file_config_path}VOC-DEFAULT-YEALINK-COMMON-TEMPLATE.cfg','r') as yealink_configs:
     yealink_common_template  = yealink_configs.readlines()
 
 
 
-def common_config_builder(year=2021, common_path='C:\\Users\\jeffrey\\Documents\\YEALINK_UPDATED_TEMPS-2021\\YEALINK_CONFIG_UPDATER\\YEALINK-COMMON-BUILDS\\'):
+def common_config_builder(year=2021, common_path='<COMMON-FILE-DIRECTORY>'):
     yealink_model_list = [
         'VOC-YEALINK-CP960', 'VOC-YEALINK-T21P',
         'VOC-YEALINK-T23G',  'VOC-YEALINK-T40G', 
