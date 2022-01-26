@@ -4,7 +4,7 @@
 ## Grab The Common Files
 common_file_config_path = '<COMMON-FILE-DIRECTORY>'
 
-with open(f'{common_file_config_path}VOC-DEFAULT-YEALINK-COMMON-TEMPLATE.cfg','r') as yealink_configs:
+with open(f'{common_file_config_path}<NAME OF FILES CREATED>','r') as yealink_configs:
     yealink_common_template  = yealink_configs.readlines()
 
 
