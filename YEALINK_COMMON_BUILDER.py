@@ -1,5 +1,5 @@
-# %T40P_FIRMWARE%
-# VOC-DEFAULT-YEALINK-COMMON-TEMPLATE
+import glob
+import os
 
 ## Grab The Common Files
 common_file_config_path = '<COMMON-FILE-DIRECTORY>'
