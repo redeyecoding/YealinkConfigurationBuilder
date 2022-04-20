@@ -78,7 +78,8 @@ def build_yealink_config():
         'VOC-YEALINK-T54W': YEALINK_16, 'VOC-YEALINK-T57W': YEALINK_16,
         'VOC-YEALINK-T58A': YEALINK_16, 'VOC-YEALINK-CP930': YEALINK_2, 
         'VOC-YEALINK-T46U': YEALINK_16, 'VOC-YEALINK-T53W': YEALINK_12,
-        'VOC-YEALINK-W60P': YEALINK_6
+        'VOC-YEALINK-W60P': YEALINK_6,'VOC-YEALINK-T31G': YEALINK_2,
+        'VOC-YEALINK-935W': YEALINK_2
 
     }
  
@@ -101,7 +102,7 @@ def build_yealink_config():
                 additional_yealink_accounts = looper(suported_yealink_lines[model_number])
 
                # new_yealink_file = common_conf_file.replace('.cfg','TEST.cfg')
-                with open(completed_configs_directory + model_number+'-TEMPLATE-'+'2021','a') as new_yealink_config_file:
+                with open(completed_configs_directory + model_number+'-TEMPLATE-'+'2022.cfg','a') as new_yealink_config_file:
                     for line in yealink_common_file:
                         new_yealink_config_file.write(line)
                     new_yealink_config_file.write(additional_yealink_accounts[1])
