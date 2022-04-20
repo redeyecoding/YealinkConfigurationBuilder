@@ -108,5 +108,7 @@ def build_yealink_config():
                 continue 
     return
 
+#Delete existing files in directory ; if any
+yealink_common_builder.delete_existing_files(completed_configs_directory)
 
 build_yealink_config()
