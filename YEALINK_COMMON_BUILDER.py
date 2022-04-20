@@ -3,13 +3,14 @@
 
 ## Grab The Common Files
 common_file_config_path = '<COMMON-FILE-DIRECTORY>'
+completed_common_files_path='<COMPLETED-COMMON-FILE-DIRECTORY>'
 
 with open(f'{common_file_config_path}<NAME OF FILES CREATED>','r') as yealink_configs:
     yealink_common_template  = yealink_configs.readlines()
 
 
 
-def common_config_builder(year=2021, common_path='<COMMON-FILE-DIRECTORY>'):
+def common_config_builder(year=2022, common_path=completed_common_files_path):
     yealink_model_list = [
         'VOC-YEALINK-CP960', 'VOC-YEALINK-T21P',
         'VOC-YEALINK-T23G',  'VOC-YEALINK-T40G', 
@@ -21,7 +22,9 @@ def common_config_builder(year=2021, common_path='<COMMON-FILE-DIRECTORY>'):
         'VOC-YEALINK-T48S',  'VOC-YEALINK-T48U',  
         'VOC-YEALINK-T54W',  'VOC-YEALINK-T57W', 
         'VOC-YEALINK-T58A',  'VOC-YEALINK-CP930', 
-        'VOC-YEALINK-T46U',  'VOC-YEALINK-T53W','VOC-YEALINK-W60P'
+        'VOC-YEALINK-T46U',  'VOC-YEALINK-T53W',
+        'VOC-YEALINK-W60P',  'VOC-YEALINK-T31G',
+        'VOC-YEALINK-935W'
     ]
 
    
@@ -48,5 +51,16 @@ def common_config_builder(year=2021, common_path='<COMMON-FILE-DIRECTORY>'):
     return {
         'common_file_path': common_path
     }
+#Delete existing files in directory ; if any
+def delete_existing_files(file_path):
+    files = glob.glob(f'{file_path}/*.cfg', recursive=True)
 
+    for f in files:
+        try:
+            os.remove(f)
+        except OSError as e:
+            print("Error: %s : %s" % (f, e.strerror))    
+    return 
+
+delete_existing_files(completed_common_files_path)
 common_config_builder()
