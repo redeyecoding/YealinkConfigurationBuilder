@@ -12,29 +12,29 @@ with open(f'{common_file_config_path}<NAME OF FILES CREATED>','r') as yealink_co
 
 def common_config_builder(year=2022, common_path=completed_common_files_path):
     yealink_model_list = [
-        'VOC-YEALINK-CP960', 'VOC-YEALINK-T21P',
-        'VOC-YEALINK-T23G',  'VOC-YEALINK-T40G', 
-        'VOC-YEALINK-T40P',  'VOC-YEALINK-T41P',  
-        'VOC-YEALINK-T41S',  'VOC-YEALINK-T42G', 
-        'VOC-YEALINK-T42S',  'VOC-YEALINK-T43U',  
-        'VOC-YEALINK-T46G',  'VOC-YEALINK-CP920',
-        'VOC-YEALINK-T46S',  'VOC-YEALINK-T48G', 
-        'VOC-YEALINK-T48S',  'VOC-YEALINK-T48U',  
-        'VOC-YEALINK-T54W',  'VOC-YEALINK-T57W', 
-        'VOC-YEALINK-T58A',  'VOC-YEALINK-CP930', 
-        'VOC-YEALINK-T46U',  'VOC-YEALINK-T53W',
-        'VOC-YEALINK-W60P',  'VOC-YEALINK-T31G',
-        'VOC-YEALINK-935W'
+        'COMPANY-NAME-YEALINK-CP960', 'COMPANY-NAME-YEALINK-T21P',
+        'COMPANY-NAME-YEALINK-T23G',  'COMPANY-NAME-YEALINK-T40G', 
+        'COMPANY-NAME-YEALINK-T40P',  'COMPANY-NAME-YEALINK-T41P',  
+        'COMPANY-NAME-YEALINK-T41S',  'COMPANY-NAME-YEALINK-T42G', 
+        'COMPANY-NAME-YEALINK-T42S',  'COMPANY-NAME-YEALINK-T43U',  
+        'COMPANY-NAME-YEALINK-T46G',  'COMPANY-NAME-YEALINK-CP920',
+        'COMPANY-NAME-YEALINK-T46S',  'COMPANY-NAME-YEALINK-T48G', 
+        'COMPANY-NAME-YEALINK-T48S',  'COMPANY-NAME-YEALINK-T48U',  
+        'COMPANY-NAME-YEALINK-T54W',  'COMPANY-NAME-YEALINK-T57W', 
+        'COMPANY-NAME-YEALINK-T58A',  'COMPANY-NAME-YEALINK-CP930', 
+        'COMPANY-NAME-YEALINK-T46U',  'COMPANY-NAME-YEALINK-T53W',
+        'COMPANY-NAME-YEALINK-W60P',  'COMPANY-NAME-YEALINK-T31G',
+        'COMPANY-NAME-YEALINK-935W'
     ]
 
    
     for yealink_model_number in yealink_model_list:
         #Strip down the model-number
-        model_number = yealink_common_template[1].replace(yealink_common_template[1], f'#{yealink_model_number}'.strip('VOC-')+'\n')
-        base_model_number = model_number.replace('#VOC-YEALINK-', '').strip()
+        model_number = yealink_common_template[1].replace(yealink_common_template[1], f'#{yealink_model_number}'.strip('COMPANY-NAME-')+'\n')
+        base_model_number = model_number.replace('#COMPANY-NAME-YEALINK-', '').strip()
 
         #Set up naming convention for output file
-        file_name_convention = model_number.replace('#VOC-', '').strip('\n')
+        file_name_convention = model_number.replace('#COMPANY-NAME-', '').strip('\n')
         current_firmware_url = yealink_common_template[310]
 
         #Setup Firmware URL
